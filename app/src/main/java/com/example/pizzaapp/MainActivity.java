@@ -2,6 +2,7 @@ package com.example.pizzaapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -46,11 +47,11 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-
+        //TODO: Set up bundle to transfer language setting
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(MainActivity.this,OrderActivity.class));
             }
         });
 
