@@ -14,12 +14,14 @@
         android:inputType="number"
         android:text="@string/noToppings"
         android:textAlignment="center"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         app:layout_constraintStart_toEndOf="@+id/btnTopping4Left"
         app:layout_constraintTop_toBottomOf="@+id/tvPepper"
         tools:ignore="Autofill,LabelFor" />
 
     <Button
-        android:id="@+id/btnTopping2Left3"
+        android:id="@+id/btnTopping2Left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
@@ -29,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvSausage" />
 
     <Button
-        android:id="@+id/btnTopping2Right3"
+        android:id="@+id/btnTopping2Right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -48,7 +50,9 @@
         android:inputType="number"
         android:text="@string/noToppings"
         android:textAlignment="center"
-        app:layout_constraintStart_toEndOf="@+id/btnTopping2Left3"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        app:layout_constraintStart_toEndOf="@+id/btnTopping2Left"
         app:layout_constraintTop_toBottomOf="@+id/tvSausage"
         tools:ignore="Autofill,LabelFor" />
 
@@ -81,6 +85,8 @@
         android:inputType="number"
         android:text="@string/noToppings"
         android:textAlignment="center"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         app:layout_constraintStart_toEndOf="@+id/btnTopping3Left"
         app:layout_constraintTop_toBottomOf="@+id/tvMushroom"
         tools:ignore="Autofill,LabelFor" />
@@ -92,7 +98,7 @@
         android:layout_marginStart="84dp"
         android:text="@string/mushroom"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTopping2Left3" />
+        app:layout_constraintTop_toBottomOf="@+id/btnTopping2Left" />
 
     <Button
         android:id="@+id/btnTopping3Left"
@@ -131,6 +137,8 @@
         android:inputType="number"
         android:text="@string/noToppings"
         android:textAlignment="center"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         app:layout_constraintStart_toEndOf="@+id/btnTopping1Left"
         app:layout_constraintTop_toBottomOf="@+id/tvPepperoni"
         tools:ignore="Autofill,LabelFor" />
