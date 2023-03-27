@@ -212,16 +212,19 @@
         app:layout_constraintTop_toBottomOf="@+id/tvSize">
 
         <RadioButton
+            android:id="@+id/sizeSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sizeSmall" />
 
         <RadioButton
+            android:id="@+id/sizeMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sizeMedium" />
 
         <RadioButton
+            android:id="@+id/sizeLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sizeLarge" />
@@ -241,7 +244,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvToppings" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/completeOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"

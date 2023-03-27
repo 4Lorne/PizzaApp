@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,16 +19,16 @@ public class MainActivity extends AppCompatActivity {
     RadioButton r1, r2;
     Button startBtn;
 
+    Language language = new Language();
+
+    boolean french = false;
+
     private static final int r1_id = 1000;
     private static final int r2_id = 1001;
-
-    HashMap<String,String>languageList = new HashMap<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        languageList.put("Start Order","Lancer la commande");
         r1 = findViewById(R.id.radioButton);
         r2 = findViewById(R.id.radioButton2);
         startBtn = findViewById(R.id.btnStartOrder);
@@ -47,11 +46,16 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-        //TODO: Set up bundle to transfer language setting
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,OrderActivity.class));
+                Intent intent = new Intent(MainActivity.this, OrderActivity.class);
+                Bundle bundle = new Bundle();
+
+                bundle.putBoolean("chosen_language",french);
+                intent.putExtra("chosen_language",french);
+
+                startActivity(intent);
             }
         });
 
@@ -60,10 +64,12 @@ public class MainActivity extends AppCompatActivity {
     public void clickRadio(){
             switch (radioGroup.getCheckedRadioButtonId()){
                 case r1_id:
-                    startBtn.setText(languageList.get("Start Order"));
+                    french = true;
+                    startBtn.setText(language.languageList.get("Start Order"));
                     break;
                 case r2_id:
-                    startBtn.setText(getKeyByValue(languageList,"Lancer la commande"));
+                    french = false;
+                    startBtn.setText(getKeyByValue(language.languageList,"Lancer la commande"));
                     break;
             }
     }

@@ -7,15 +7,33 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.TextView;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class OrderActivity extends AppCompatActivity {
     Button addTopping1, addTopping2, addTopping3, addTopping4;
     Button removeTopping1, removeTopping2, removeTopping3, removeTopping4;
+    Button completeOrder;
+    RadioButton small, medium, large;
+    TextView size, pepperoni, sausage, mushroom, peppers;
     EditText numToppings1, numToppings2, numToppings3, numToppings4;
+
+    boolean french;
+    int totalToppings = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
+
+        Bundle bundle = getIntent().getExtras();
+
+        french = bundle.getBoolean("chosen_language");
+        Language language = new Language();
+
         //Add toppings
         addTopping1 = findViewById(R.id.btnTopping1Right);
         addTopping2 = findViewById(R.id.btnTopping2Right);
@@ -32,7 +50,9 @@ public class OrderActivity extends AppCompatActivity {
         numToppings3 = findViewById(R.id.numTopping3);
         numToppings4 = findViewById(R.id.numTopping4);
 
+        completeOrder = findViewById(R.id.completeOrder);
 
+        //On click listeners
         addTopping1.setOnClickListener(onButtonClicked);
         addTopping2.setOnClickListener(onButtonClicked);
         addTopping3.setOnClickListener(onButtonClicked);
@@ -42,6 +62,16 @@ public class OrderActivity extends AppCompatActivity {
         removeTopping2.setOnClickListener(onButtonClicked);
         removeTopping3.setOnClickListener(onButtonClicked);
         removeTopping4.setOnClickListener(onButtonClicked);
+
+        size = findViewById(R.id.tvSize);
+        small = findViewById(R.id.sizeSmall);
+        medium = findViewById(R.id.sizeMedium);
+        large = findViewById(R.id.sizeLarge);
+        pepperoni = findViewById(R.id.tvPepperoni);
+        sausage = findViewById(R.id.tvSausage);
+        mushroom = findViewById(R.id.tvMushroom);
+        peppers = findViewById(R.id.tvPepper);
+        setLanguage(french,language);
 
     }
 
@@ -73,19 +103,58 @@ public class OrderActivity extends AppCompatActivity {
                     break;
                 case R.id.btnTopping4Right:
                     numToppings4 = plusTopping(numToppings4);
+                    break;
             }
         }
     };
 
 
+    //TODO: Add a check for total toppings being greater than 3 and at least 1
+    //      Add a date / time check
+    //      Create a storyboard
+    //
     public EditText minusTopping(EditText numOrder){
         int numToppings = Integer.parseInt(String.valueOf(numOrder.getText())) - 1;
+        if (numToppings <= 0){
+            numToppings = 0;
+        }
+
         numOrder.setText(String.valueOf(numToppings));
         return numOrder;
     }
     public EditText plusTopping(EditText numOrder){
         int numToppings = Integer.parseInt(String.valueOf(numOrder.getText())) + 1;
+        if (numToppings >= 3){
+            numToppings = 3;
+        }
+
         numOrder.setText(String.valueOf(numToppings));
         return numOrder;
     }
+
+    public void setLanguage(Boolean french, Language language){
+            if (french){
+                size.setText(language.languageList.get("Size"));
+                small.setText(language.languageList.get("Small"));
+                medium.setText(language.languageList.get("Medium"));
+                large.setText(language.languageList.get("Large"));
+                pepperoni.setText(language.languageList.get("Pepperoni"));
+                sausage.setText(language.languageList.get("Sausage"));
+                mushroom.setText(language.languageList.get("Mushroom"));
+                peppers.setText(language.languageList.get("Peppers"));
+                completeOrder.setText(language.languageList.get("Complete Order"));
+            }
+    }
+
+    //Get key by value - https://stackoverflow.com/a/2904266
+    public static <T, E> T getKeyByValue(Map<T, E> map, E value) {
+        for (Map.Entry<T, E> entry : map.entrySet()) {
+            if (Objects.equals(value, entry.getValue())) {
+                return entry.getKey();
+            }
+        }
+        return null;
+    }
+
+
 }
