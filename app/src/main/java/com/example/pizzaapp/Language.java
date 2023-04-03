@@ -14,6 +14,7 @@ public class Language {
 
     private void setDictionary(){
         languageList.put("Start Order","Lancer la commande");
+        languageList.put("Order History","Historique des commandes");
         languageList.put("Size","Talle");
         languageList.put("Small","Petite");
         languageList.put("Medium","Moyen");

@@ -4,6 +4,7 @@
     <string name="title">Day\'s Pizza</string>
     <string name="settings">Settings</string>
     <string name="startorder">Start Order</string>
+    <string name="orderhistory">Order History</string>
 
     <string name="languageFrench">French</string>
     <string name="languageEnglish">English</string>

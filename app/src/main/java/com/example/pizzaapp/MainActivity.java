@@ -17,7 +17,7 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
     RadioGroup radioGroup;
     RadioButton r1, r2;
-    Button startBtn;
+    Button startBtn, orderHistory;
 
     Language language = new Language();
 
@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         r1 = findViewById(R.id.radioButton);
         r2 = findViewById(R.id.radioButton2);
         startBtn = findViewById(R.id.btnStartOrder);
+        orderHistory = findViewById(R.id.btnOrderHistory);
         radioGroup = findViewById(R.id.radioGroup);
 
         //Setting ID
@@ -66,10 +67,12 @@ public class MainActivity extends AppCompatActivity {
                 case r1_id:
                     french = true;
                     startBtn.setText(language.languageList.get("Start Order"));
+                    orderHistory.setText(language.languageList.get("Order History"));
                     break;
                 case r2_id:
                     french = false;
                     startBtn.setText(getKeyByValue(language.languageList,"Lancer la commande"));
+                    orderHistory.setText(getKeyByValue(language.languageList,"Historique des commandes"));
                     break;
             }
     }
