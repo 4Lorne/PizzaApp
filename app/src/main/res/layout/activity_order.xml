@@ -5,116 +5,104 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/numTopping4"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:ems="10"
-        android:inputType="number"
-        android:text="@string/noToppings"
-        android:textAlignment="center"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        app:layout_constraintStart_toEndOf="@+id/btnTopping4Left"
-        app:layout_constraintTop_toBottomOf="@+id/tvPepper"
-        tools:ignore="Autofill,LabelFor" />
-
-    <Button
-        android:id="@+id/btnTopping2Left"
+    <TextView
+        android:id="@+id/tvPepperoni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
-        android:layout_marginTop="2dp"
-        android:text="@string/removeTopping"
+        android:layout_marginTop="10dp"
+        android:text="@string/pepperoni"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSausage" />
-
-    <Button
-        android:id="@+id/btnTopping2Right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="2dp"
-        android:text="@string/addTopping"
-        app:layout_constraintStart_toEndOf="@+id/numTopping2"
-        app:layout_constraintTop_toBottomOf="@+id/tvSausage" />
-
-    <EditText
-        android:id="@+id/numTopping2"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="2dp"
-        android:ems="10"
-        android:inputType="number"
-        android:text="@string/noToppings"
-        android:textAlignment="center"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        app:layout_constraintStart_toEndOf="@+id/btnTopping2Left"
-        app:layout_constraintTop_toBottomOf="@+id/tvSausage"
-        tools:ignore="Autofill,LabelFor" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPizzaToppings" />
 
     <TextView
         android:id="@+id/tvSausage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
+        android:layout_marginTop="4dp"
         android:text="@string/sausage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnTopping1Left" />
 
     <Button
-        android:id="@+id/btnTopping3Right"
+        android:id="@+id/btnTopping4Right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="4dp"
         android:text="@string/addTopping"
-        app:layout_constraintStart_toEndOf="@+id/numTopping3"
-        app:layout_constraintTop_toBottomOf="@+id/tvMushroom" />
+        app:layout_constraintStart_toEndOf="@+id/numTopping4"
+        app:layout_constraintTop_toBottomOf="@+id/tvPepper" />
+
+    <Button
+        android:id="@+id/btnTopping2Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/removeTopping"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSausage" />
 
     <EditText
-        android:id="@+id/numTopping3"
+        android:id="@+id/numTopping4"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:inputType="number"
         android:text="@string/noToppings"
         android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/btnTopping4Left"
+        app:layout_constraintTop_toBottomOf="@+id/tvPepper"
+        tools:ignore="Autofill,LabelFor" />
+
+    <Button
+        android:id="@+id/btnTopping2Right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/addTopping"
+        app:layout_constraintStart_toEndOf="@+id/numTopping2"
+        app:layout_constraintTop_toBottomOf="@+id/tvSausage" />
+
+    <EditText
+        android:id="@+id/numTopping1"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
         android:focusable="false"
         android:focusableInTouchMode="false"
-        app:layout_constraintStart_toEndOf="@+id/btnTopping3Left"
-        app:layout_constraintTop_toBottomOf="@+id/tvMushroom"
+        android:inputType="number"
+        android:text="@string/noToppings"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/btnTopping1Left"
+        app:layout_constraintTop_toBottomOf="@+id/tvPepperoni"
         tools:ignore="Autofill,LabelFor" />
 
     <TextView
-        android:id="@+id/tvMushroom"
+        android:id="@+id/tvPepper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
-        android:text="@string/mushroom"
+        android:layout_marginTop="4dp"
+        android:text="@string/pepper"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTopping2Left" />
-
-    <Button
-        android:id="@+id/btnTopping3Left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="2dp"
-        android:text="@string/removeTopping"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMushroom" />
+        app:layout_constraintTop_toBottomOf="@+id/btnTopping3Left" />
 
     <Button
         android:id="@+id/btnTopping1Right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
         android:text="@string/addTopping"
         app:layout_constraintStart_toEndOf="@+id/numTopping1"
         app:layout_constraintTop_toBottomOf="@+id/tvPepperoni" />
@@ -124,33 +112,82 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
+        android:layout_marginTop="4dp"
         android:text="@string/removeTopping"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPepperoni" />
 
-    <EditText
-        android:id="@+id/numTopping1"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:ems="10"
-        android:inputType="number"
-        android:text="@string/noToppings"
-        android:textAlignment="center"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        app:layout_constraintStart_toEndOf="@+id/btnTopping1Left"
-        app:layout_constraintTop_toBottomOf="@+id/tvPepperoni"
-        tools:ignore="Autofill,LabelFor" />
-
-    <TextView
-        android:id="@+id/tvPepperoni"
+    <Button
+        android:id="@+id/btnTopping3Left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
-        android:text="@string/pepperoni"
+        android:layout_marginTop="8dp"
+        android:text="@string/removeTopping"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMushroom" />
+
+    <Button
+        android:id="@+id/btnTopping3Right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/addTopping"
+        app:layout_constraintStart_toEndOf="@+id/numTopping3"
+        app:layout_constraintTop_toBottomOf="@+id/tvMushroom" />
+
+    <EditText
+        android:id="@+id/numTopping3"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="number"
+        android:text="@string/noToppings"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/btnTopping3Left"
+        app:layout_constraintTop_toBottomOf="@+id/tvMushroom"
+        tools:ignore="Autofill,LabelFor" />
+
+    <TextView
+        android:id="@+id/tvMushroom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/mushroom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTopping2Left" />
+
+    <Button
+        android:id="@+id/btnTopping4Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/removeTopping"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPepper" />
+
+    <EditText
+        android:id="@+id/numTopping2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="number"
+        android:text="@string/noToppings"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/btnTopping2Left"
+        app:layout_constraintTop_toBottomOf="@+id/tvSausage"
+        tools:ignore="Autofill,LabelFor" />
 
     <TextView
         android:id="@+id/tvToppings"
@@ -170,34 +207,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="top" />
-
-    <Button
-        android:id="@+id/btnTopping4Left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="2dp"
-        android:text="@string/removeTopping"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPepper" />
-
-    <Button
-        android:id="@+id/btnTopping4Right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/addTopping"
-        app:layout_constraintStart_toEndOf="@+id/numTopping4"
-        app:layout_constraintTop_toBottomOf="@+id/tvPepper" />
-
-    <TextView
-        android:id="@+id/tvPepper"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:text="@string/pepper"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTopping3Left" />
 
     <RadioGroup
         android:id="@+id/radioGroup2"
@@ -235,7 +244,7 @@
         android:id="@+id/tvSize"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:text="@string/size"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -253,5 +262,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCustomerDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/customerDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numTopping4" />
+
+    <TextView
+        android:id="@+id/tvPizzaToppings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/pizzaToppings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
+    <EditText
+        android:id="@+id/ptCustomerName"
+        android:layout_width="119dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/customerName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCustomerDetails" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

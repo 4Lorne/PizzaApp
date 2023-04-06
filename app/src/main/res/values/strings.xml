@@ -24,6 +24,9 @@
     <string name="removeTopping">-1</string>
     <string name="noToppings">0</string>
 
+    <string name="pizzaToppings">Pizza Toppings</string>
+    <string name="customerDetails">Customer Details</string>
+    <string name="customerName">Name…</string>
     <string name="finishOrder">Complete Order</string>
 
 

@@ -24,6 +24,8 @@ public class Language {
         languageList.put("Sausage","Saucisse");
         languageList.put("Mushroom","Champignon");
         languageList.put("Peppers","Poivrons");
+        languageList.put("Customer Details","Détails du client");
+        languageList.put("Name…","Nom…");
         languageList.put("Complete Order","Complétez la commande");
     }
 

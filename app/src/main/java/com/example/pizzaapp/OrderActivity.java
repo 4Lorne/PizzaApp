@@ -19,8 +19,9 @@ public class OrderActivity extends AppCompatActivity {
     Button removeTopping1, removeTopping2, removeTopping3, removeTopping4;
     Button completeOrder;
     RadioButton small, medium, large;
-    TextView size, pepperoni, sausage, mushroom, peppers;
-    EditText numToppings1, numToppings2, numToppings3, numToppings4;
+    TextView size, pepperoni, sausage, mushroom, peppers, customerDetails;
+    EditText numToppings1, numToppings2, numToppings3, numToppings4, customerName;
+
 
     boolean french;
     int totalToppings = 0;
@@ -50,6 +51,8 @@ public class OrderActivity extends AppCompatActivity {
         numToppings3 = findViewById(R.id.numTopping3);
         numToppings4 = findViewById(R.id.numTopping4);
 
+        customerName = findViewById(R.id.ptCustomerName);
+        customerDetails = findViewById(R.id.tvCustomerDetails);
         completeOrder = findViewById(R.id.completeOrder);
 
         //On click listeners
@@ -81,27 +84,42 @@ public class OrderActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.btnTopping1Left:
+                    toppingTotal();
                     numToppings1 = minusTopping(numToppings1);
                     break;
                 case R.id.btnTopping1Right:
+                    toppingTotal();
+
                     numToppings1 = plusTopping(numToppings1);
                     break;
                 case R.id.btnTopping2Left:
+                    toppingTotal();
+
                     numToppings2 = minusTopping(numToppings2);
                     break;
                 case R.id.btnTopping2Right:
+                    toppingTotal();
+
                     numToppings2 = plusTopping(numToppings2);
                     break;
                 case R.id.btnTopping3Left:
+                    toppingTotal();
+
                     numToppings3 = minusTopping(numToppings3);
                     break;
                 case R.id.btnTopping3Right:
+                    toppingTotal();
+
                     numToppings3 = plusTopping(numToppings3);
                     break;
                 case R.id.btnTopping4Left:
+                    toppingTotal();
+
                     numToppings4 = minusTopping(numToppings4);
                     break;
                 case R.id.btnTopping4Right:
+                    toppingTotal();
+
                     numToppings4 = plusTopping(numToppings4);
                     break;
             }
@@ -114,20 +132,25 @@ public class OrderActivity extends AppCompatActivity {
     //      Create a storyboard
     //
     public EditText minusTopping(EditText numOrder){
-        int numToppings = Integer.parseInt(String.valueOf(numOrder.getText())) - 1;
-        if (numToppings <= 0){
-            numToppings = 0;
+        if (totalToppings <= 0 ){
+            return numOrder;
         }
-
+        int numToppings = Integer.parseInt(String.valueOf(numOrder.getText())) - 1;
+        totalToppings--;
         numOrder.setText(String.valueOf(numToppings));
+        System.out.println(totalToppings);
         return numOrder;
     }
     public EditText plusTopping(EditText numOrder){
+        if (totalToppings >= 3){
+            System.out.println(totalToppings);
+            return numOrder;
+        }
         int numToppings = Integer.parseInt(String.valueOf(numOrder.getText())) + 1;
         if (numToppings >= 3){
             numToppings = 3;
         }
-
+        totalToppings++;
         numOrder.setText(String.valueOf(numToppings));
         return numOrder;
     }
@@ -142,6 +165,9 @@ public class OrderActivity extends AppCompatActivity {
                 sausage.setText(language.languageList.get("Sausage"));
                 mushroom.setText(language.languageList.get("Mushroom"));
                 peppers.setText(language.languageList.get("Peppers"));
+
+                customerDetails.setText(language.languageList.get("Customer Details"));
+                customerName.setText(language.languageList.get("Name…"));
                 completeOrder.setText(language.languageList.get("Complete Order"));
             }
     }
@@ -156,5 +182,12 @@ public class OrderActivity extends AppCompatActivity {
         return null;
     }
 
-
+    public void toppingTotal(){
+        if (totalToppings < 0){
+            totalToppings = 0;
+        }
+        if (totalToppings > 3){
+            totalToppings = 3;
+        }
+    }
 }
